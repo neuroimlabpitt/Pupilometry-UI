@@ -128,20 +128,6 @@ class CamGUI:
             command=self.set_exposure_time(self.exposure_value.get()))
         self.exposure_set.pack()
 
-        # Gain control
-        '''
-        self.gain_label = Label(master, text="Set Analog Gain")
-        self.gain_label.pack()
-
-        self.gain_value = Entry(master)
-        self.gain_value.insert(0, "1")
-        self.gain_value.pack()
-
-        self.gain_set = Button(master, text="Set",
-            command=self.set_analog_gain(self.gain_value.get()))
-        self.gain_set.pack()
-        '''
-
         # Zoom control
         self.zoom_label = Label(master, text="Set zoom")
         self.zoom_label.pack()
@@ -295,26 +281,6 @@ class CamGUI:
 
         # Set Shutter Speed
         camera.shutter_speed = shut_speed
-
-    def set_analog_gain(self, value):
-        """Gain control"""
-        '''
-        try:
-            value = int(value)
-        except:
-            print("INVALID exposure time (NaN entered) ... Setting to 1")
-            a_gain = 1
-
-        if value < 1:
-            print("INVALID analog gain (below 1db) ...  Setting  to 1")
-            a_gain = 1
-        else:
-            print("Analog Gain = ", value, "dB")
-            a_gain = value
-
-        # Set gain
-        camera.analog_gain = a_gain
-        '''
 
     def start_recording(self):
         """Start recording or wait for trigger"""
