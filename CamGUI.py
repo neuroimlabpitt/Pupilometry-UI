@@ -104,6 +104,16 @@ class CamGUI:
             command=self.stop_recording)
         self.stop_rec.pack()
 
+        # Zoom control
+        self.zoom_label = Label(master, text="Set zoom")
+        self.zoom_label.pack(side=LEFT)
+
+        ZOOM_Var = StringVar(root)
+        ZOOM_Var.set(zooms[0])
+        self.zoom_option = OptionMenu(master, ZOOM_Var, *zooms,
+            command=self.set_zoom)
+        self.zoom_option.pack(side=LEFT)
+
         # Framerate control
         self.framerate_label = Label(master, text="Framerate")
         self.framerate_label.pack()
@@ -127,17 +137,7 @@ class CamGUI:
         self.exposure_set = Button(master, text="Set",
             command=self.set_exposure_time(self.exposure_value.get()))
         self.exposure_set.pack()
-        '''
-        # Zoom control
-        self.zoom_label = Label(master, text="Set zoom")
-        self.zoom_label.pack()
 
-        ZOOM_Var = StringVar(root)
-        ZOOM_Var.set(zooms[0])
-        self.zoom_option = OptionMenu(master, ZOOM_Var, *zooms,
-            command=self.set_zoom)
-        self.zoom_option.pack()
-        '''
         # Skip lamp control, if necessary
         if not args.light_off:
             self.light_label = Label(master, text="LED control")
