@@ -51,6 +51,9 @@ class CamGUI:
 
     def __init__(self, master):
         """Create and pack all GUI elements"""
+        # Add Scrollbar Function
+        sbar = Scrollbar(master)
+        sbar.pack(side=RIGHT, fill=Y)
 
         self.master = master
         master.title("Camera Control")
@@ -457,15 +460,14 @@ camera.preview_window = (100,20,width,height)
 
 # Create GUI
 root = Tk()
-sbar = Scrollbar(root)
-sbar.pack(side=RIGHT, fill=Y)
+'''
 mylist = Listbox(root, yscrollcommand=sbar.set)
 for line in range(100):
     mylist.insert(END, "This is line number " + str(line))
 
 mylist.pack(side=LEFT, fill=BOTH)
 sbar.config(command=mylist.yview)
-
+'''
 my_gui = CamGUI(root)
 
 # Loop until interrupted
