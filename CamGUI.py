@@ -55,9 +55,6 @@ class CamGUI:
         self.master = master
         master.title("Camera Control")
 
-        self.swin = ScrolledWindow(master)
-        self.swin.pack()
-
         self.label = Label(master, text="Control the camera!")
         self.label.pack()
 
@@ -460,6 +457,8 @@ camera.preview_window = (100,20,width,height)
 
 # Create GUI
 root = Tk()
+sbar = Scrollbar(root)
+sbar.pack(side=RIGHT, fill=Y)
 my_gui = CamGUI(root)
 
 # Loop until interrupted
