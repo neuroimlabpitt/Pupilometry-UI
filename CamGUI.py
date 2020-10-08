@@ -129,6 +129,7 @@ class CamGUI:
         self.exposure_set.pack()
 
         # Gain control
+        '''
         self.gain_label = Label(master, text="Set Analog Gain")
         self.gain_label.pack()
 
@@ -139,6 +140,7 @@ class CamGUI:
         self.gain_set = Button(master, text="Set",
             command=self.set_analog_gain(self.gain_value.get()))
         self.gain_set.pack()
+        '''
 
         # Zoom control
         self.zoom_label = Label(master, text="Set zoom")
