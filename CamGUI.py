@@ -63,11 +63,11 @@ class CamGUI:
 
         self.open_preview = Button(master, text="Start Preview",
             command=camera.start_preview)
-        self.open_preview.pack()
+        self.open_preview.pack(side=LEFT)
 
         self.close_preview = Button(master, text="Stop Preview",
             command=camera.stop_preview)
-        self.close_preview.pack()
+        self.close_preview.pack(side=RIGHT)
 
         self.record_time_label = Label(master, text="Time (s)")
         self.record_time_label.pack()
