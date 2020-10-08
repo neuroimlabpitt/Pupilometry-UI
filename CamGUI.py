@@ -116,27 +116,27 @@ class CamGUI:
 
         # Framerate control
         self.framerate_label = Label(master, text="Framerate")
-        self.framerate_label.pack(side=RIGHT)
+        self.framerate_label.pack()
 
         self.framerate_value = Entry(master)
         self.framerate_value.insert(0, "30")
-        self.framerate_value.pack(side=RIGHT)
+        self.framerate_value.pack()
 
         self.framerate_set = Button(master, text="Set",
             command=self.set_framerate(self.framerate_value.get()))
-        self.framerate_set.pack(side=RIGHT)
+        self.framerate_set.pack()
 
         # Exposure control
         self.exposure_label = Label(master, text="Exposure Time")
-        self.exposure_label.pack(side=RIGHT)
+        self.exposure_label.pack()
 
         self.exposure_value = Entry(master)
         self.exposure_value.insert(0, "0")
-        self.exposure_value.pack(side=RIGHT)
+        self.exposure_value.pack()
 
         self.exposure_set = Button(master, text="Set",
             command=self.set_exposure_time(self.exposure_value.get()))
-        self.exposure_set.pack(side=RIGHT)
+        self.exposure_set.pack()
 
         # Skip lamp control, if necessary
         if not args.light_off:
