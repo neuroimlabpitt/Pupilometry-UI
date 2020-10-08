@@ -282,6 +282,9 @@ class CamGUI:
     def start_recording(self):
         """Start recording or wait for trigger"""
 
+        # Lock the gain so that it does not change
+        camera.exposure_mode = 'off'
+
         # Check trigger state
         self.trigState = False
         doWait = self.wait_trigger_flag.get()
