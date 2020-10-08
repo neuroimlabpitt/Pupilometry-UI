@@ -459,6 +459,13 @@ camera.preview_window = (100,20,width,height)
 root = Tk()
 sbar = Scrollbar(root)
 sbar.pack(side=RIGHT, fill=Y)
+mylist = Listbox(root, yscrollcommand=sbar.set)
+for line in range(100):
+    mylist.insert(END, "This is line number " + str(line))
+
+mylist.pack(side=LEFT, fill=BOTH)
+sbar.config(command=mylist.yview)
+
 my_gui = CamGUI(root)
 
 # Loop until interrupted
