@@ -55,6 +55,9 @@ class CamGUI:
         self.master = master
         master.title("Camera Control")
 
+        self.swin = ScrolledWindow(master)
+        self.swin.pack()
+
         self.label = Label(master, text="Control the camera!")
         self.label.pack()
 
