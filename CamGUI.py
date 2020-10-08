@@ -7,7 +7,7 @@ except:
     from tkinter import *
     from tkinter.filedialog import asksaveasfilename
 
-from picamera import PiCamera
+from picamera import PiCamera, mmal, mmalobj, exc
 import RPi.GPIO as GPIO
 from brightpi import *
 
@@ -293,7 +293,7 @@ class CamGUI:
 
     def set_analog_gain(self, value):
         """Gain control"""
-
+        '''
         try:
             value = int(value)
         except:
@@ -309,6 +309,7 @@ class CamGUI:
 
         # Set gain
         camera.analog_gain = a_gain
+        '''
 
     def start_recording(self):
         """Start recording or wait for trigger"""
