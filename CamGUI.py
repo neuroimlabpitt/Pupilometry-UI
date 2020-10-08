@@ -127,7 +127,7 @@ class CamGUI:
         self.exposure_set = Button(master, text="Set",
             command=self.set_exposure_time(self.exposure_value.get()))
         self.exposure_set.pack()
-
+        '''
         # Zoom control
         self.zoom_label = Label(master, text="Set zoom")
         self.zoom_label.pack()
@@ -137,7 +137,7 @@ class CamGUI:
         self.zoom_option = OptionMenu(master, ZOOM_Var, *zooms,
             command=self.set_zoom)
         self.zoom_option.pack()
-
+        '''
         # Skip lamp control, if necessary
         if not args.light_off:
             self.light_label = Label(master, text="LED control")
