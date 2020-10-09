@@ -40,6 +40,7 @@ args = parser.parse_args()
 
 effects = ['off', 'all', 'IR', 'white']
 zooms = ['1x', '2x', '4x', '10x']
+framerates = ['30', '10', '5']
 
 class CamGUI:
     """A simple GUI to control RasPi camera recordings
@@ -112,16 +113,14 @@ class CamGUI:
         self.zoom_option.pack(side=LEFT)
 
         # Framerate control
-        self.framerate_label = Label(master, text="Framerate")
+        self.framerate_label = Label(master, text="Set Framerate")
         self.framerate_label.pack()
 
-        self.framerate_value = Entry(master)
-        self.framerate_value.insert(0, "30")
-        self.framerate_value.pack()
-
-        self.framerate_set = Button(master, text="Set",
-            command=self.set_framerate(self.framerate_value.get()))
-        self.framerate_set.pack()
+        FR_Var = StringVar(root)
+        FR_Var.set(framerates[0])
+        self.framerate_option = OptionMenu(master, FR_Var, *framerates,
+            command=self.set_framerate)
+        self.framerate_option.pack()
 
         # Exposure control
         self.exposure_label = Label(master, text="Exposure Time")
@@ -238,18 +237,15 @@ class CamGUI:
     def set_framerate(self, value):
         """Framerate control"""
 
-        try:
-            value = int(value)
-        except:
-            print("INVALID fps (NaN entered) ... Setting 30fps")
-            rate = 30
-
-        if(value not in [5, 10, 30]):
-            print("INVALID fps (not either 5, 10, or 30) ... Setting 10fps")
+        if(value == '5'):
+            rate = 5
+            print('Framerate = 5')
+        elif(value == '10'):
             rate = 10
+            print('Framerate = 10')
         else:
-            print("Framerate = ", value)
-            rate = value
+            rate = 30
+            print('Framerate = 30')
 
         # Set Framerate
         camera.framerate = rate
