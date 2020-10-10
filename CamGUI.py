@@ -7,8 +7,11 @@ except:
     from tkinter import *
     from tkinter.filedialog import asksaveasfilename
 
+import sys
 from picamera import PiCamera, mmal, mmalobj, exc
 import RPi.GPIO as GPIO
+
+sys.path.insert(1, 'Bright-Pi/brightpi')
 from brightpi import *
 
 import os, datetime, time, itertools
