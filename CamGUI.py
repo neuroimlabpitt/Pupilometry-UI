@@ -137,7 +137,7 @@ class CamGUI:
 
         # Initialise acquisition counter
         self.acq_num = 1;
-        '''
+
         # Skip lamp control, if necessary
         if not args.light_off:
             self.light_label = Label(master, text="LED control")
@@ -148,7 +148,7 @@ class CamGUI:
             self.light_Option = OptionMenu(master, LIGHT_Var, *effects,
                 command=self.set_light)
             self.light_Option.pack()
-        '''
+
 
     def on_enter(self, event):
         """Tooltip for record time label"""
@@ -199,7 +199,7 @@ class CamGUI:
 
         with open(fname, 'w') as outfile:
             json.dump(params, outfile)
-    '''
+
     def set_light(self, value):
         """BrightPi control"""
 
@@ -221,7 +221,7 @@ class CamGUI:
 
         if not (leds_on == LED_ALL):
             brightPi.set_led_on_off(leds_off, OFF)
-        '''
+
     def set_zoom(self, value):
         """Zoom control"""
 
@@ -390,7 +390,7 @@ class CamGUI:
 # Set up trigger input GPIO
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(args.trigger_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP) # internal pull up
-'''
+
 try:
     brightPi = BrightPi()
     brightPi.reset()
@@ -406,7 +406,7 @@ except:
 
     # Disable LED option menu
     args.light_off = True
-'''
+
 # Create camera object with defined settings
 camera = PiCamera()
 camera.rotation = args.rotation
@@ -434,9 +434,9 @@ try:
 except KeyboardInterrupt:
     GPIO.cleanup()
     camera.close
-    '''
+
     try:
         brightPi.reset()
     except:
         pass
-    '''
+
