@@ -61,7 +61,7 @@ class CamGUI:
         self.label.pack()
 
         self.open_preview = Button(master, text="Start Preview",
-            command=camera.start_preview)
+            command=self.start_prev)
         self.open_preview.pack(side=LEFT)
 
         self.close_preview = Button(master, text="Stop Preview",
@@ -276,6 +276,13 @@ class CamGUI:
 
         # Set Shutter Speed
         camera.shutter_speed = shut_speed
+
+    def start_prev(self):
+    	# Set the exposure mode to auto
+        camera.exposure_mode = 'auto'
+
+        # Start preview of camera
+        camera.start_preview()
 
     def start_recording(self):
         """Start recording or wait for trigger"""
