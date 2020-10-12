@@ -121,7 +121,7 @@ class CamGUI:
         FR_Var.set(framerates[0])
         self.framerate_option = OptionMenu(master, FR_Var, *framerates,
             command=self.set_framerate)
-        self.framerate_option.pack()
+        self.framerate_option.pack(side=RIGHT)
 
         # Exposure control
         self.exposure_label = Label(master, text="Exposure Time")
