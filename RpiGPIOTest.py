@@ -17,10 +17,13 @@ while True:
 '''
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(40, GPIO.OUT)
+GPIO.setup(40, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 while True:
-	time.sleep(10)
-	GPIO.output(40, 1)
-	time.sleep(10)
-	GPIO.output(40, 0)
+
+	time.sleep(1)
+
+	if(GPIO.input(40) == 1):
+		print("Button Not Pressed")
+	if(GPIO.input(40) == 0):
+		print("Button Pressed")
