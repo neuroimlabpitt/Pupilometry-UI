@@ -10,7 +10,7 @@ while True:
 
 	time.sleep(0.05) # debounce
 
-	if GPIO.input(32) == 0:
+	if GPIO.input(32) == 1:
 		print("Button Pressed!!")
 	else:
 		time.sleep(0.195)
