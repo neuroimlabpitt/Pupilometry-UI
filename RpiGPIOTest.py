@@ -3,7 +3,7 @@ import time
 
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(32, GPIO.IN, pull_up_down=GPIO.PUD_UP)	# Set as internal pull up resistor input
+GPIO.setup(32, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)	# Set as internal pull up resistor input
 
 while True:
 	GPIO.wait_for_edge(32, GPIO.FALLING, timeout=195)
