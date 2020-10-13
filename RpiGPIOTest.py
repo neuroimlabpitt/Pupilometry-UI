@@ -6,7 +6,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(32, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)	# Set as internal pull up resistor input
 
 while True:
-	GPIO.wait_for_edge(32, GPIO.FALLING, timeout=195)
+	GPIO.wait_for_edge(32, GPIO.RISING, timeout=195)
 
 	time.sleep(0.05) # debounce
 
