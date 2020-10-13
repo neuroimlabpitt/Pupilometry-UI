@@ -374,7 +374,7 @@ class CamGUI:
         numloops = int(args.timeout * 5) # Number of loops until timeout
 
         for x in range(numloops):
-            GPIO.wait_for_edge(args.trigger_pin, GPIO.RISING, timeout=195)
+            GPIO.wait_for_edge(args.trigger_pin, GPIO.FALLING, timeout=195)
             time.sleep(0.005) #debounce 5ms
 
         # double-check - workaround for messy edge detection
