@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO
 import time
 
-
+'''
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(40, GPIO.IN, pull_up_down=GPIO.PUD_UP)	# Set as internal pull up resistor input
 
@@ -14,3 +14,13 @@ while True:
 		print("Button Pressed!!")
 	else:
 		time.sleep(0.195)
+'''
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(40, GPIO.OUT)
+
+while True:
+	time.sleep(10)
+	GPIO.output(40, 1)
+	time.sleep(10)
+	GPIO.output(40, 0)
