@@ -17,7 +17,7 @@ while True:
 '''
 
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(32, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(32, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
 while True:
 
