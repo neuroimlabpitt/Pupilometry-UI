@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 
-GPIO.setmode(GPIO.board)
+GPIO.setmode(GPIO.BOARD)
 GPIO.setup(40, GPIO.IN, pull_up_down=GPIO.PUD_UP)	# Set as internal pull up resistor input
 
 while True:
