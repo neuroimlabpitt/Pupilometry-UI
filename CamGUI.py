@@ -23,7 +23,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--fullscreen', action='store_true', default=False,
     dest='fullscreen', help="Toggle fullscreen preview.")
-parser.add_argument("--trigger_pin",  type=int, default=40,
+parser.add_argument("--trigger_pin",  type=int, default=32,
     help="Raspberry's trigger input pin as specified with 'GPIO.board'.",)
 parser.add_argument("--light_off", action='store_true', default=False,
     dest='light_off', help="Disable BrightPi.")
@@ -374,11 +374,11 @@ class CamGUI:
         numloops = int(args.timeout * 5) # Number of loops until timeout
 
         for x in range(numloops):
-            GPIO.wait_for_edge(args.trigger_pin, GPIO.FALLING, timeout=195)
+            GPIO.wait_for_edge(args.trigger_pin, GPIO.RISING, timeout=195)
             time.sleep(0.005) #debounce 5ms
 
         # double-check - workaround for messy edge detection
-        if GPIO.input(args.trigger_pin) == 0:
+        if GPIO.input(args.trigger_pin) == 1:
             self.trigState = True
             self.start_recording()
             return
@@ -396,7 +396,7 @@ class CamGUI:
 
 # Set up trigger input GPIO
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(args.trigger_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP) # internal pull up
+GPIO.setup(args.trigger_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # internal pull up
 
 try:
     brightPi = BrightPi()
