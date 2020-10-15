@@ -295,7 +295,7 @@ class CamGUI:
         doWait = self.wait_trigger_flag.get()
         if doWait:
             self.wait_for_trigger()
-            return
+            #return
 
         if self.trigState:
             self.wait_trigger_flag.set(1)
@@ -371,18 +371,19 @@ class CamGUI:
         sys.stdout.write('\bWaiting for trigger ')
         spinner = itertools.cycle(['-', '/', '|', '\\']) # set up spinning "wheel"
 
-        numloops = int(args.timeout * 5) # Number of loops until timeout
+        #numloops = int(args.timeout * 5) # Number of loops until timeout
 
-        for x in range(numloops):
+        while True:
             GPIO.wait_for_edge(args.trigger_pin, GPIO.RISING, timeout=195)
+            print("Trigger Recived")
             #time.sleep(0.005) #debounce 5ms
-
+        '''
         # double-check - workaround for messy edge detection
         if GPIO.input(args.trigger_pin) == 1:
             self.trigState = True
             self.start_recording()
             return
-        '''
+        
         else:
             time.sleep(0.195)
         '''
