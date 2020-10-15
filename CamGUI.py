@@ -375,7 +375,6 @@ class CamGUI:
         #numloops = int(args.timeout * 5) # Number of loops until timeout
 
         while True:
-            print("HERE")
             GPIO.wait_for_edge(args.trigger_pin, GPIO.RISING, timeout=195)
             time.sleep(0.002) #debounce 2ms
             if GPIO.input(32) == 1:
