@@ -378,7 +378,7 @@ class CamGUI:
             print("HERE")
             GPIO.wait_for_edge(args.trigger_pin, GPIO.RISING, timeout=195)
             time.sleep(0.002) #debounce 2ms
-            if GPIO.input(32) == 0:
+            if GPIO.input(32) == 1:
                 print("Button Pressed!!")
                 print("Trigger Recived")
                 break
