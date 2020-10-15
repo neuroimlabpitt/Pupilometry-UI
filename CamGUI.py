@@ -374,16 +374,18 @@ class CamGUI:
         numloops = int(args.timeout * 5) # Number of loops until timeout
 
         for x in range(numloops):
-            GPIO.wait_for_edge(args.trigger_pin, GPIO.FALLING, timeout=195)
-            time.sleep(0.005) #debounce 5ms
+            GPIO.wait_for_edge(args.trigger_pin, GPIO.RISING, timeout=195)
+            #time.sleep(0.005) #debounce 5ms
 
         # double-check - workaround for messy edge detection
         if GPIO.input(args.trigger_pin) == 1:
             self.trigState = True
             self.start_recording()
             return
+        '''
         else:
             time.sleep(0.195)
+        '''
 
         sys.stdout.write(spinner.next())  # write the next character
         sys.stdout.flush()                # flush stdout buffer (actual character display)
