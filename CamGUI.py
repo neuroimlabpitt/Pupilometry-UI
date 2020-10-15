@@ -368,13 +368,15 @@ class CamGUI:
         defines maximum response latency. Length of range in for loop multiplied
         by timeout + debounce time gives time until trigger timeout."""
 
-        sys.stdout.write('\bWaiting for trigger \n')
-        spinner = itertools.cycle(['-', '/', '|', '\\']) # set up spinning "wheel"
+        print("Waiting for Trigger...")
+        #sys.stdout.write('\bWaiting for trigger \n')
+        #spinner = itertools.cycle(['-', '/', '|', '\\']) # set up spinning "wheel"
 
         #numloops = int(args.timeout * 5) # Number of loops until timeout
 
         while True:
-            GPIO.wait_for_edge(args.trigger_pin, GPIO.RISING, timeout=195)
+            GPIO.wait_for_edge(args.trigger_pin, GPIO.FALLING, timeout=195)
+
             if GPIO.input(32) == 1:
                 print("Button Pressed!!")
                 print("Trigger Recived")
@@ -403,7 +405,7 @@ class CamGUI:
 
 # Set up trigger input GPIO
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(args.trigger_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # internal pull up
+GPIO.setup(args.trigger_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # internal pull down
 
 try:
     brightPi = BrightPi()
