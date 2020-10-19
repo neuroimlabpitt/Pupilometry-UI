@@ -6,14 +6,12 @@ This repository contains code which captures videos to measure pupil diameter ch
 
 To install this GUI (on a Raspberry Pi device), open terminal and run these commands
   
-  '''
-  mkdir Code
-  cd Code
-  git clone https://github.com/aet37/pupilUX.git
-  cd pupilUX
-  chmod +x install.sh
-  ./install
-  '''
+  1.) mkdir Code
+  2.) cd Code
+  3.) git clone https://github.com/aet37/pupilUX.git
+  4.) cd pupilUX
+  5.) chmod +x install.sh
+  6.) ./install
   
 Your RaspberryPi will reboot after this, and you should be able to start using the GUI:
 
