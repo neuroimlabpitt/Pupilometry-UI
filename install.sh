@@ -1,12 +1,3 @@
-#!/usr/bin/env bash
-
-# Create Code folder and cd into it
-mkdir -p /home/pi/Code
-cd /home/pi/Code
-
-# Clone into pupillometry repository
-git clone https://github.com/aet37/pupilUX.git
-
 # Enable camera
 sudo raspi-config nonint do_camera 0
 
