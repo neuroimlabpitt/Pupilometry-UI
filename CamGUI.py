@@ -291,14 +291,9 @@ class CamGUI:
         camera.exposure_mode = 'off'
 
         # Check trigger state
-        #self.trigState = False
         doWait = self.wait_trigger_flag.get()
         if doWait:
             self.wait_for_trigger()
-            #return
-
-        #if self.trigState:
-        #   self.wait_trigger_flag.set(1)
 
         fname = self.file_name_value.get()
 
@@ -369,10 +364,6 @@ class CamGUI:
         by timeout + debounce time gives time until trigger timeout."""
 
         print("Waiting for Trigger...")
-        #sys.stdout.write('\bWaiting for trigger \n')
-        #spinner = itertools.cycle(['-', '/', '|', '\\']) # set up spinning "wheel"
-
-        #numloops = int(args.timeout * 5) # Number of loops until timeout
 
         while True:
             GPIO.wait_for_edge(args.trigger_pin, GPIO.RISING, timeout=195)
@@ -381,27 +372,6 @@ class CamGUI:
                 print("Button Pressed!!")
                 print("Trigger Recived")
                 break
-            #time.sleep(0.005) #debounce 5ms
-        '''
-        # double-check - workaround for messy edge detection
-        if GPIO.input(args.trigger_pin) == 1:
-            self.trigState = True
-            self.start_recording()
-            return
-        
-        else:
-            time.sleep(0.195)
-        '''
-        '''
-        sys.stdout.write(spinner.next())  # write the next character
-        sys.stdout.flush()                # flush stdout buffer (actual character display)
-        sys.stdout.write('\b')            # erase the last written char
-
-        sys.stdout.write('\bNo trigger arrived\n')
-        sys.stdout.flush()
-        return
-        '''
-
 
 # Set up trigger input GPIO
 GPIO.setmode(GPIO.BOARD)
