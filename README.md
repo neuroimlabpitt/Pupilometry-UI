@@ -6,7 +6,7 @@ This repository contains code which captures videos to measure pupil diameter ch
 
 To install this GUI (on a Raspberry Pi device), open terminal and run these commands
   
-  '''bash
+  '''
   mkdir Code
   cd Code
   git clone https://github.com/aet37/pupilUX.git
