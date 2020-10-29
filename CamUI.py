@@ -9,8 +9,10 @@ class CTCUi(QtWidgets.QMainWindow):
 	def __init__(self):
 		super(CTCUi, self).__init__()
 		uic.loadUi('UI/cam_gui.ui', self)
+		self.setFixedHeight(790)
+		self.setFixedHeight(470)
 
-		self.setWindowTitle("CTC Main Page")
+		self.setWindowTitle("Camera Control")
 
 
 
