@@ -297,12 +297,14 @@ class CamGUI:
 
         fname = self.file_name_value.get()
 
+        '''
         if fname == "./":
             date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
             fname = "./"+ date
 
         if fname[-5:] != ".h264":
             fname = fname+ ".h264"
+        '''
 
         # Update displayed file name
         self.file_name_value.delete(0,END)
@@ -323,7 +325,10 @@ class CamGUI:
         time_rec = int(self.record_time_value.get())
 
         # Start recording and tell user
-        camera.start_recording('test.data', 'yuv')
+        if fname == './other':
+            camera.start_recording('test.h264')
+        else:
+            camera.start_recording('test.data', 'yuv')
         sys.stdout.write("\rRecording started\n")
 
         # Increase counter
