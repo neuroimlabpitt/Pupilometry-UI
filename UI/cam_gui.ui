@@ -51,8 +51,8 @@ color: rgb(252, 1, 7);</string>
    <widget class="QLineEdit" name="RecordingTime">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>100</y>
+      <x>200</x>
+      <y>80</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -64,8 +64,8 @@ color: rgb(252, 1, 7);</string>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>320</x>
-      <y>80</y>
+      <x>170</x>
+      <y>60</y>
       <width>141</width>
       <height>16</height>
      </rect>
@@ -77,8 +77,8 @@ color: rgb(252, 1, 7);</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>100</y>
+      <x>280</x>
+      <y>80</y>
       <width>101</width>
       <height>16</height>
      </rect>
@@ -87,11 +87,11 @@ color: rgb(252, 1, 7);</string>
      <string>(0 for unlimited)</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit">
+   <widget class="QLineEdit" name="FName">
     <property name="geometry">
      <rect>
-      <x>290</x>
-      <y>170</y>
+      <x>410</x>
+      <y>80</y>
       <width>181</width>
       <height>21</height>
      </rect>
@@ -103,8 +103,8 @@ color: rgb(252, 1, 7);</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>370</x>
-      <y>150</y>
+      <x>410</x>
+      <y>60</y>
       <width>61</width>
       <height>16</height>
      </rect>
@@ -117,7 +117,7 @@ color: rgb(252, 1, 7);</string>
     <property name="geometry">
      <rect>
       <x>480</x>
-      <y>170</y>
+      <y>60</y>
       <width>111</width>
       <height>16</height>
      </rect>
@@ -126,11 +126,11 @@ color: rgb(252, 1, 7);</string>
      <string>(Blank for default)</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton">
+   <widget class="QRadioButton" name="FR30">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>240</y>
+      <x>210</x>
+      <y>140</y>
       <width>100</width>
       <height>20</height>
      </rect>
@@ -139,11 +139,11 @@ color: rgb(252, 1, 7);</string>
      <string>30fps</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_2">
+   <widget class="QRadioButton" name="FR10">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>270</y>
+      <x>210</x>
+      <y>170</y>
       <width>100</width>
       <height>20</height>
      </rect>
@@ -152,11 +152,11 @@ color: rgb(252, 1, 7);</string>
      <string>10fps</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_3">
+   <widget class="QRadioButton" name="FR5">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>300</y>
+      <x>210</x>
+      <y>200</y>
       <width>100</width>
       <height>20</height>
      </rect>
@@ -165,11 +165,11 @@ color: rgb(252, 1, 7);</string>
      <string>5fps</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_4">
+   <widget class="QRadioButton" name="ZOOM1x">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>240</y>
+      <x>440</x>
+      <y>135</y>
       <width>100</width>
       <height>20</height>
      </rect>
@@ -178,11 +178,11 @@ color: rgb(252, 1, 7);</string>
      <string>1x</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_5">
+   <widget class="QRadioButton" name="ZOOM2x">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>270</y>
+      <x>440</x>
+      <y>165</y>
       <width>100</width>
       <height>20</height>
      </rect>
@@ -191,11 +191,11 @@ color: rgb(252, 1, 7);</string>
      <string>2x</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_6">
+   <widget class="QRadioButton" name="ZOOM4x">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>300</y>
+      <x>440</x>
+      <y>195</y>
       <width>100</width>
       <height>20</height>
      </rect>
@@ -204,11 +204,11 @@ color: rgb(252, 1, 7);</string>
      <string>4x</string>
     </property>
    </widget>
-   <widget class="QRadioButton" name="radioButton_7">
+   <widget class="QRadioButton" name="ZOOM10x">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>330</y>
+      <x>440</x>
+      <y>225</y>
       <width>100</width>
       <height>20</height>
      </rect>
@@ -220,8 +220,8 @@ color: rgb(252, 1, 7);</string>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>430</x>
-      <y>215</y>
+      <x>440</x>
+      <y>110</y>
       <width>60</width>
       <height>21</height>
      </rect>
@@ -238,8 +238,8 @@ color: rgb(252, 1, 7);</string>
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>240</x>
-      <y>210</y>
+      <x>210</x>
+      <y>110</y>
       <width>91</width>
       <height>31</height>
      </rect>
@@ -253,11 +253,11 @@ color: rgb(252, 1, 7);</string>
      <string>Framerate</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
+   <widget class="QCheckBox" name="TriggerCheck">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>370</y>
+      <x>440</x>
+      <y>260</y>
       <width>121</width>
       <height>20</height>
      </rect>
@@ -266,11 +266,11 @@ color: rgb(252, 1, 7);</string>
      <string>External Trigger</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="StartRec">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>400</y>
+      <x>250</x>
+      <y>300</y>
       <width>121</width>
       <height>32</height>
      </rect>
@@ -283,11 +283,11 @@ color: rgb(255, 255, 255);</string>
      <string>Start Recording</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="StopRec">
     <property name="geometry">
      <rect>
-      <x>420</x>
-      <y>400</y>
+      <x>410</x>
+      <y>300</y>
       <width>113</width>
       <height>32</height>
      </rect>
@@ -298,6 +298,61 @@ color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>Stop Recording</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="Exposure">
+    <property name="geometry">
+     <rect>
+      <x>280</x>
+      <y>240</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>240</y>
+      <width>81</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Exposure:</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="FRFrame">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>110</y>
+      <width>120</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+   </widget>
+   <widget class="QFrame" name="ZOOMFrame">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>109</y>
+      <width>120</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
    </widget>
   </widget>
