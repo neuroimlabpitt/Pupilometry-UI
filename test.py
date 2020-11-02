@@ -297,7 +297,7 @@ class CamGUI:
 
         fname = self.file_name_value.get()
 
-
+        '''
         if fname == "./":
             date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
             fname = "./"+ date
@@ -319,12 +319,12 @@ class CamGUI:
             # Warn user and do nothing
             sys.stdout.write("\nFile already exists!\n")
             return
-
+        '''
         # Get recording time
         time_rec = int(self.record_time_value.get())
 
         # Start recording and tell user
-        if fname == './other.h264':
+        if fname == 'o':
             camera.start_recording('test.h264')
         else:
             camera.start_recording('test.data', 'yuv')
@@ -345,7 +345,7 @@ class CamGUI:
 
         camera.stop_recording()
         sys.stdout.write("File saved to {:s}\n".format(self.file_name_value.get()))
-        self.save_camera_params()
+        #self.save_camera_params()
 
     def point_save_location(self):
         """ Ask user where to save the file"""
