@@ -334,7 +334,7 @@ class CamGUI:
         # Update displayed file name
         self.file_name_value.delete(0,END)
         self.file_name_value.insert(0, fname)
-        
+
         '''
         # Add counter to filename (without updating dispalay)
         filename, file_extension = os.path.splitext(fname)
@@ -373,6 +373,7 @@ class CamGUI:
 
         camera.stop_recording()
         sys.stdout.write("File saved to {:s}\n".format(self.file_name_value.get()))
+        self.file_name_value.insert("")
         #self.save_camera_params()
 
     def point_save_location(self):
