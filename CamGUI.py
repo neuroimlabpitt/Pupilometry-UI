@@ -56,7 +56,7 @@ class CamGUI:
         """Create and pack all GUI elements"""
 
         self.raw_collection = False
-        
+
         self.master = master
         master.title("Camera Control")
 
@@ -252,10 +252,10 @@ class CamGUI:
         """Raw Flag"""
 
         if (value == 'raw'):
-            raw_collection = True		# Set the raw flag to 1
+            self.raw_collection = True		# Set the raw flag to 1
             print('Data Collection Raw')
         else:
-        	raw_collection = False
+        	self.raw_collection = False
 
     def set_framerate(self, value):
         """Framerate control"""
@@ -318,16 +318,16 @@ class CamGUI:
 
         fname = self.file_name_value.get()
 
-        if (fname == "") & (raw_collection == False):
+        if (fname == "") & (self.raw_collection == False):
             date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
             fname = "" + date
-        elif (fname == "./") & (raw_collection == True):
+        elif (fname == "./") & (self.raw_collection == True):
             date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
             fname = "./" + date
 
-        if (fname[-5:] != ".h264") & (raw_collection == False):
+        if (fname[-5:] != ".h264") & (self.raw_collection == False):
             fname = fname + ".h264"
-        elif (fname[-5:] != ".data") & (raw_collection == True):
+        elif (fname[-5:] != ".data") & (self.raw_collection == True):
             fname = fname + ".data"
 
         # Update displayed file name
@@ -348,10 +348,10 @@ class CamGUI:
         # Get recording time
         time_rec = int(self.record_time_value.get())
 
-        print('raw_collection = ', raw_collection)
+        print('raw_collection = ', self.raw_collection)
 
         # Start recording and tell user
-        if raw_collection == True:
+        if self.raw_collection == True:
         	camera.start_recording(fname, 'yuv')
         else:
         	camera.start_recording(fname)
