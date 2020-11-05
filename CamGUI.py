@@ -334,10 +334,12 @@ class CamGUI:
         self.file_name_value.delete(0,END)
         self.file_name_value.insert(0, fname)
 
+        '''
         # Add counter to filename (without updating dispalay)
         filename, file_extension = os.path.splitext(fname)
         filename = filename + str(self.acq_num).zfill(3)
         fname = filename+file_extension
+        '''
 
         # Check file doesn't exist
         if os.path.isfile(fname):
@@ -347,8 +349,6 @@ class CamGUI:
 
         # Get recording time
         time_rec = int(self.record_time_value.get())
-
-        print('raw_collection = ', self.raw_collection)
 
         # Start recording and tell user
         if self.raw_collection == True:
