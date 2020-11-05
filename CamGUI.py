@@ -321,7 +321,7 @@ class CamGUI:
         if (fname == "") & (self.raw_collection == False):
             date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
             fname = "" + date
-        elif (fname == "./") & (self.raw_collection == True):
+        elif (fname == "") & (self.raw_collection == True):
             date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
             fname = "./" + date
 
