@@ -348,7 +348,7 @@ class CamGUI:
         time_rec = int(self.record_time_value.get())
 
         # Start recording and tell user
-        if raw_collection = True:
+        if raw_collection == True:
         	camera.start_recording(fname, 'yuv')
         else:
         	camera.start_recording(fname)
