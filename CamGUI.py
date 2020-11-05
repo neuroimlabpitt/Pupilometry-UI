@@ -373,7 +373,7 @@ class CamGUI:
 
         camera.stop_recording()
         sys.stdout.write("File saved to {:s}\n".format(self.file_name_value.get()))
-        self.file_name_value.insert("")
+        self.file_name_value.insert(0, "")
         #self.save_camera_params()
 
     def point_save_location(self):
