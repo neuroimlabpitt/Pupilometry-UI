@@ -86,7 +86,7 @@ class CamGUI:
         self.file_name_label.pack()
 
         self.file_name_value = Entry(master)
-        self.file_name_value.insert(0, "./")
+        self.file_name_value.insert(0, "")
         self.file_name_value.pack()
 
         self.save_file = Button(master, text="Browse...",
@@ -317,9 +317,9 @@ class CamGUI:
 
         fname = self.file_name_value.get()
 
-        if (fname == "./") & (raw_collection == False):
+        if (fname == "") & (raw_collection == False):
             date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
-            fname = "./" + date
+            fname = "" + date
         elif (fname == "./") & (raw_collection == True):
             date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
             fname = "./" + date
@@ -347,6 +347,8 @@ class CamGUI:
         # Get recording time
         time_rec = int(self.record_time_value.get())
 
+        print('raw_collection = ', raw_collection)
+
         # Start recording and tell user
         if raw_collection == True:
         	camera.start_recording(fname, 'yuv')
@@ -369,6 +371,7 @@ class CamGUI:
 
         camera.stop_recording()
         sys.stdout.write("File saved to {:s}\n".format(self.file_name_value.get()))
+        self.file_name_value.insert(0, "")
         #self.save_camera_params()
 
     def point_save_location(self):
