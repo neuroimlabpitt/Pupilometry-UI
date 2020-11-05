@@ -43,7 +43,6 @@ effects = ['off', 'all', 'IR', 'white']
 zooms = ['1x', '2x', '4x', '10x']
 framerates = ['30', '10', '5']
 datatype = ['compressed', 'raw']
-raw_collection = False
 
 class CamGUI:
     """A simple GUI to control RasPi camera recordings
@@ -56,6 +55,8 @@ class CamGUI:
     def __init__(self, master):
         """Create and pack all GUI elements"""
 
+        self.raw_collection = False
+        
         self.master = master
         master.title("Camera Control")
 
