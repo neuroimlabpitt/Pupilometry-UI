@@ -321,13 +321,13 @@ class CamGUI:
             date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
             fname = "./" + date
         elif (fname == "./") & (raw_collection == True):
-        	date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
+            date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
             fname = "./" + date
 
         if (fname[-5:] != ".h264") & (raw_collection == False):
             fname = fname + ".h264"
         elif (fname[-5:] != ".data") & (raw_collection == True):
-        	fname = fname + ".data"
+            fname = fname + ".data"
 
         # Update displayed file name
         self.file_name_value.delete(0,END)
