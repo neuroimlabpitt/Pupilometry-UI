@@ -330,11 +330,12 @@ class CamGUI:
         elif (fname[-5:] != ".data") & (self.raw_collection == True):
             fname = fname + ".data"
 
-        '''
+
         # Update displayed file name
         self.file_name_value.delete(0,END)
         self.file_name_value.insert(0, fname)
-    
+        
+        '''
         # Add counter to filename (without updating dispalay)
         filename, file_extension = os.path.splitext(fname)
         filename = filename + str(self.acq_num).zfill(3)
