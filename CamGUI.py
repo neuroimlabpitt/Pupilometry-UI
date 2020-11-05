@@ -42,6 +42,8 @@ args = parser.parse_args()
 effects = ['off', 'all', 'IR', 'white']
 zooms = ['1x', '2x', '4x', '10x']
 framerates = ['30', '10', '5']
+datatype = ['compressed', 'raw']
+raw_collection = False
 
 class CamGUI:
     """A simple GUI to control RasPi camera recordings
@@ -112,6 +114,15 @@ class CamGUI:
         self.zoom_option = OptionMenu(master, ZOOM_Var, *zooms,
             command=self.set_zoom)
         self.zoom_option.pack(side=LEFT)
+
+        # raw control
+        self.zoom_label = Label(master, text="Set Raw collection")
+        self.zoom_label.pack(side=RIGHT)
+        RAW_Var = StringVar(root)
+        RAW_Var.set(datatype[0])
+        self.zoom_option = OptionMenu(master, RAW_Var, *datatype,
+            command=self.set_datatype)
+        self.zoom_option.pack(side=RIGHT)
 
         # Framerate control
         self.framerate_label = Label(master, text="Set Framerate")
@@ -236,6 +247,15 @@ class CamGUI:
 
         camera.zoom = zoom
 
+    def set_datatype(self, value):
+        """Raw Flag"""
+
+        if (value == 'raw'):
+            raw_collection = True		# Set the raw flag to 1
+            print('Data Collection Raw')
+        else:
+        	raw_collection = False
+
     def set_framerate(self, value):
         """Framerate control"""
 
@@ -297,12 +317,17 @@ class CamGUI:
 
         fname = self.file_name_value.get()
 
-        if fname == "./":
+        if (fname == "./") & (raw_collection == False):
             date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
-            fname = "./"+ date
+            fname = "./" + date
+        else if (fname == "./") & (raw_collection == True):
+        	date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
+            fname = "./" + date
 
-        if fname[-5:] != ".h264":
-            fname = fname+ ".h264"
+        if (fname[-5:] != ".h264") & (raw_collection == False):
+            fname = fname + ".h264"
+        else if (fname[-5:] != ".data") & (raw_collection == True):
+        	fname = fname + ".data"
 
         # Update displayed file name
         self.file_name_value.delete(0,END)
@@ -341,7 +366,7 @@ class CamGUI:
 
         camera.stop_recording()
         sys.stdout.write("File saved to {:s}\n".format(self.file_name_value.get()))
-        self.save_camera_params()
+        #self.save_camera_params()
 
     def point_save_location(self):
         """ Ask user where to save the file"""
