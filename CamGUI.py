@@ -207,7 +207,10 @@ class CamGUI:
         }
 
         fname = self.file_name_value.get()
-        fname = fname.replace('.h264', '.json')
+        if(fname[-5:] == '.h264'):
+            fname = fname.replace('.h264', '.json')
+        else:
+            fname = fname.replace('.data', '.json')
 
         with open(fname, 'w') as outfile:
             json.dump(params, outfile)
@@ -374,7 +377,7 @@ class CamGUI:
         camera.stop_recording()
         sys.stdout.write("File saved to {:s}\n".format(self.file_name_value.get()))
         self.file_name_value.insert(0, "")
-        #self.save_camera_params()
+        self.save_camera_params()
 
     def point_save_location(self):
         """ Ask user where to save the file"""
