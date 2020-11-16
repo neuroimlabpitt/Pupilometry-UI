@@ -7,7 +7,7 @@ import RPi.GPIO as GPIO
 
 import os, datetime, time, itertools
 
-from tqdm import tqdm, trange
+#from tqdm import tqdm, trange
 import simplejson as json
 
 from brightpi import *
