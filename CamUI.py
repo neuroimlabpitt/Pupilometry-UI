@@ -95,7 +95,6 @@ class CamUI(QtWidgets.QMainWindow):
 
 	# For Start Preivew Button
 	def StartPreview(self):
-		print('Starting Preview')
 		# Set the exposure mode to auto
 		camera.exposure_mode = 'auto'
 
@@ -104,41 +103,31 @@ class CamUI(QtWidgets.QMainWindow):
 
 	# For Stop Preivew Button
 	def StopPreview(self):
-		print('Stop Preview')
 		camera.stop_preview()
 
 	# For any Framerate Radio button
 	def SetFR30(self):
-		print('Framerate = 30')
 		camera.framerate = 30
 	def SetFR10(self):
-		print('Framerate = 10')
 		camera.framerate = 10
 	def SetFR5(self):
-		print('Framerate = 5')
 		camera.framerate = 5
 
 	# For any Zoom Radio button
 	def SetZoom1(self):
-		print('Zoom = 1')
 		camera.zoom = (0.0, 0.0, 1.0, 1.0)
 	def SetZoom2(self):
-		print('Zoom = 2')
 		camera.zoom = (0.25, 0.25, 0.5, 0.5)
 	def SetZoom4(self):
-		print('Zoom = 4')
 		camera.zoom = (0.375, 0.375, 0.25, 0.25)
 	def SetZoom10(self):
-		print('Zoom = 10')
 		camera.zoom = (0.45, 0.45, 0.1, 0.1)
 
 	# For any Comp. Radio button
 	def SetComp(self):
 		self.collect_raw = False
-		print('Collecting Raw = ', self.collect_raw)
 	def SetRaw(self):
 		self.collect_raw = True
-		print('Collecting Raw', self.collect_raw)
 
 	# For External Trigger button
 	def ExternalTriggerCheck(self):
@@ -146,15 +135,9 @@ class CamUI(QtWidgets.QMainWindow):
 			self.wait_for_trigger = True
 		else:
 			self.wait_for_trigger = False
-		print("Wait for Trigger: ", self.wait_for_trigger)
 
 	# For Starting the Recording
 	def StartRecording(self):
-		print('')
-		print(self.length_text.text())
-		print(self.fname_text.text())
-		print(self.exposure_text.text())
-		print('')
 		"""Start recording or wait for trigger"""
 
 		# Lock the gain so that it does not change
@@ -211,7 +194,6 @@ class CamUI(QtWidgets.QMainWindow):
 			self.progress_bar.setValue(50)		# Set Progress at 50
 
 	def StopRecording(self):
-		print('Stopping Recording')
 		"""Stop current recording"""
 		camera.stop_recording()
 		self.progress_bar.setValue(0)	# Update Progress level
