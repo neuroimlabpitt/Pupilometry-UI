@@ -93,10 +93,10 @@ class CamUI(QtWidgets.QMainWindow):
 	def StartPreview(self):
 		print('Starting Preview')
 		# Set the exposure mode to auto
-        camera.exposure_mode = 'auto'
+		camera.exposure_mode = 'auto'
 
-        # Start preview of camera
-        camera.start_preview()
+		# Start preview of camera
+		camera.start_preview()
 
 	# For Stop Preivew Button
 	def StopPreview(self):
@@ -218,48 +218,47 @@ class CamUI(QtWidgets.QMainWindow):
 	###############################################################################################
 	## Helper Function
 	###############################################################################################
-    def SaveCameraParams(self):
-        """Save camera parameters to file"""
+	def SaveCameraParams(self):
+		"""Save camera parameters to file"""
+		params = {
+			"analog_gain" : float(camera.analog_gain),
+			"awb_gains" : [float(x) for x in camera.awb_gains],
+			"awb_mode" : camera.awb_mode,
+			"brightness" : camera.brightness,
+			"contrast" : float(camera.contrast),
+			"crop" : camera.crop,
+			"digital_gain" : float(camera.digital_gain),
+			"drc_strength" : camera.drc_strength,
+			"exposure" : {
+			"compensation" : camera.exposure_compensation,
+				"mode" : camera.exposure_mode,
+				"speed" : camera.exposure_speed
+			},
+			"flash_mode" : camera.flash_mode,
+			"framerate" : float(camera.framerate),
+			"hflip" : camera.hflip,
+			"image_denoise" : camera.image_denoise,
+			"image_effect" : camera.image_effect,
+			"image_effect_params" : camera.image_effect_params,
+			"iso" : camera.iso,
+			"meter_mode" : camera.meter_mode,
+			"resolution" : {
+				"width" : camera.resolution.width,
+				"height" : camera.resolution.height
+			},
+			"rotation" : camera.rotation,
+			"sensor_mode" : camera.sensor_mode,
+			"sharpness" : camera.sharpness
+		}
 
-        params = {
-            "analog_gain" : float(camera.analog_gain),
-            "awb_gains" : [float(x) for x in camera.awb_gains],
-            "awb_mode" : camera.awb_mode,
-            "brightness" : camera.brightness,
-            "contrast" : float(camera.contrast),
-            "crop" : camera.crop,
-            "digital_gain" : float(camera.digital_gain),
-            "drc_strength" : camera.drc_strength,
-            "exposure" : {
-                "compensation" : camera.exposure_compensation,
-                "mode" : camera.exposure_mode,
-                "speed" : camera.exposure_speed
-            },
-            "flash_mode" : camera.flash_mode,
-            "framerate" : float(camera.framerate),
-            "hflip" : camera.hflip,
-            "image_denoise" : camera.image_denoise,
-            "image_effect" : camera.image_effect,
-            "image_effect_params" : camera.image_effect_params,
-            "iso" : camera.iso,
-            "meter_mode" : camera.meter_mode,
-            "resolution" : {
-                "width" : camera.resolution.width,
-                "height" : camera.resolution.height
-            },
-            "rotation" : camera.rotation,
-            "sensor_mode" : camera.sensor_mode,
-            "sharpness" : camera.sharpness
-        }
+		fname = self.file_name_value.get()
+		if(fname[-5:] == '.h264'):
+			fname = fname.replace('.h264', '.json')
+		else:
+			fname = fname.replace('.data', '.json')
 
-        fname = self.file_name_value.get()
-        if(fname[-5:] == '.h264'):
-            fname = fname.replace('.h264', '.json')
-        else:
-            fname = fname.replace('.data', '.json')
-
-        with open(fname, 'w') as outfile:
-            json.dump(params, outfile)
+		with open(fname, 'w') as outfile:
+			json.dump(params, outfile)
 
 	def WaitForTrigger(self):
 		'''Wait for a trigger to arrive'''
