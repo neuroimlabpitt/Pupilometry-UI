@@ -214,7 +214,7 @@ class CamUI(QtWidgets.QMainWindow):
 		print('Stopping Recording')
 		"""Stop current recording"""
 		camera.stop_recording()
-		self.progress_bar.value(0)	# Update Progress level
+		self.progress_bar.setValue(0)	# Update Progress level
 		print('File saved to ', self.fname_text.text())
 		self.fname_text.setText('./')
 		self.save_camera_params()
