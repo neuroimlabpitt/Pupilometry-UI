@@ -10,7 +10,7 @@ import os, datetime, time, itertools
 from tqdm import tqdm, trange
 import simplejson as json
 
-from .brightpi import *
+#from brightpi import *
 
 # Define the Trigger pin
 TRIGGER_PIN = 32
