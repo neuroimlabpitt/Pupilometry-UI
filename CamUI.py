@@ -193,9 +193,9 @@ class CamUI(QtWidgets.QMainWindow):
 
 		# Start recording and tell user
 		if self.collect_raw == True:
-			camera.start_recording(fname, 'yuv')
+			camera.StartRecording(fname, 'yuv')
 		else:
-			camera.start_recording(fname)
+			camera.StartRecording(fname)
 		print('Recording started')
 
 		# Increase counter
@@ -206,7 +206,7 @@ class CamUI(QtWidgets.QMainWindow):
 			for remaining in trange(time_rec, 0, -1):
 				camera.wait_recording(1)
 				self.progress_bar.setValue(int((time_rec - remaining)/time_rec))	# Update Progress level
-			self.stop_recording()
+			self.StopRecording()
 		else:
 			self.progress_bar.setValue(50)		# Set Progress at 50
 
