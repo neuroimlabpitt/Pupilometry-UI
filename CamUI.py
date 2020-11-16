@@ -121,16 +121,16 @@ class CamUI(QtWidgets.QMainWindow):
 	# For any Zoom Radio button
 	def SetZoom1(self):
 		print('Zoom = 1')
-		camera.zoom = 1
+		camera.zoom = (0.0, 0.0, 1.0, 1.0)
 	def SetZoom2(self):
 		print('Zoom = 2')
-		camera.zoom = 2
+		camera.zoom = (0.25, 0.25, 0.5, 0.5)
 	def SetZoom4(self):
 		print('Zoom = 4')
-		camera.zoom = 4
+		camera.zoom = (0.375, 0.375, 0.25, 0.25)
 	def SetZoom10(self):
 		print('Zoom = 10')
-		camera.zoom = 10
+		camera.zoom = (0.45, 0.45, 0.1, 0.1)
 
 	# For any Comp. Radio button
 	def SetComp(self):
