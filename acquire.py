@@ -22,6 +22,7 @@ class CamUI(QtWidgets.QMainWindow):
 	def __init__(self):
 		super(CamUI, self).__init__()
 		uic.loadUi('UI/cam_gui.ui', self)
+		self.centerOnScreen()
 
 		# Initiaize Some Parameters
 		#self.setFixedWidth(790)
