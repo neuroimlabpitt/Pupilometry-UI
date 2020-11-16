@@ -310,11 +310,11 @@ GPIO.setup(TRIGGER_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # internal pull dow
 # Camera Set Up
 # Create camera object with defined settings
 camera = PiCamera()
-camera.rotation = args.rotation
+camera.rotation = 180
 camera.color_effects = (128,128) #b/w
-camera.framerate = args.framerate
-camera.preview_fullscreen = args.fullscreen
-camera.sensor_mode = args.sensor_mode
+camera.framerate = 30
+camera.preview_fullscreen = False
+camera.sensor_mode = 1
 
 # User Added Camera settings
 camera.shutter_speed = 60000
