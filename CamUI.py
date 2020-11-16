@@ -12,6 +12,9 @@ import simplejson as json
 
 #from brightpi import *
 
+# Define the Trigger pin
+TRIGGER_PIN = 32
+
 # GLOBALS
 class CamUI(QtWidgets.QMainWindow):
 
@@ -267,7 +270,7 @@ class CamUI(QtWidgets.QMainWindow):
 		print("Waiting for Trigger...")
 
 		while True:
-			GPIO.wait_for_edge(self.trigger_pin, GPIO.RISING, timeout=195)
+			GPIO.wait_for_edge(TRIGGER_PIN, GPIO.RISING, timeout=195)
 			time.sleep(0.002) #debounce 2ms
 			if GPIO.input(32) == 1:
 				print("Button Pressed!!")
@@ -302,7 +305,7 @@ except:
 
 # Set up trigger input GPIO
 GPIO.setmode(GPIO.BOARD)
-GPIO.setup(args.trigger_pin, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # internal pull down
+GPIO.setup(TRIGGER_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN) # internal pull down
 
 # Camera Set Up
 # Create camera object with defined settings
