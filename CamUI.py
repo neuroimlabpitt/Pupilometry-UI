@@ -216,8 +216,8 @@ class CamUI(QtWidgets.QMainWindow):
 		camera.stop_recording()
 		self.progress_bar.setValue(0)	# Update Progress level
 		print('File saved to ', self.fname_text.text())
-		self.fname_text.setText('./')
 		self.SaveCameraParams()
+		self.fname_text.setText('./')
 
 	###############################################################################################
 	## Helper Function
