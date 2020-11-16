@@ -10,7 +10,7 @@ import os, datetime, time, itertools
 #from tqdm import tqdm, trange
 import simplejson as json
 
-from brightpi import *
+#from brightpi import *
 
 # GLOBALS
 class CamUI(QtWidgets.QMainWindow):
@@ -284,6 +284,7 @@ class CamUI(QtWidgets.QMainWindow):
 '''
 	# MAIN
 '''
+'''
 try:
 	brightPi = BrightPi()
 	brightPi.reset()
@@ -296,6 +297,7 @@ try:
 	OFF = 0
 except:
 	print('No BrightPi detected. Disabling LED control.')
+'''
 
 # Set up trigger input GPIO
 GPIO.setmode(GPIO.BOARD)
