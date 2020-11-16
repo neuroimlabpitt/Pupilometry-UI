@@ -166,9 +166,9 @@ class CamUI(QtWidgets.QMainWindow):
 
 		fname = self.fname_text.text()
 
-		if (fname == '') & (self.wait_for_trigger == False):
+		if (fname == './') & (self.wait_for_trigger == False):
 			date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
-			fname = '' + date
+			fname = './' + date
 		elif (fname == '') & (self.wait_for_trigger == True):
 			date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
 			fname = "./" + date
