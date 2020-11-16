@@ -205,10 +205,10 @@ class CamUI(QtWidgets.QMainWindow):
 		if (time_rec > 0):
 			for remaining in trange(time_rec, 0, -1):
 				camera.wait_recording(1)
-				self.progress_bar.value(int((time_rec - remaining)/time_rec))	# Update Progress level
+				self.progress_bar.setValue(int((time_rec - remaining)/time_rec))	# Update Progress level
 			self.stop_recording()
 		else:
-			self.progress_bar.value(50)		# Set Progress at 50
+			self.progress_bar.setValue(50)		# Set Progress at 50
 
 	def StopRecording(self):
 		print('Stopping Recording')
