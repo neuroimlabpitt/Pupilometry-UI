@@ -255,7 +255,7 @@ class CamUI(QtWidgets.QMainWindow):
 			"sharpness" : camera.sharpness
 		}
 
-		fname = self.file_name_value.get()
+		fname = self.fname_text.text()
 		if(fname[-5:] == '.h264'):
 			fname = fname.replace('.h264', '.json')
 		else:
