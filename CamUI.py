@@ -321,9 +321,9 @@ camera.shutter_speed = 60000
 
 
 #calculate preview size
-height = int(args.prevsize * 0.75)
-width = int(args.prevsize)
-camera.preview_window = (100,20,width,height)
+height = int(320 * 0.75)
+width = int(320)
+camera.preview_window = (100, 20, width, height)
 
 # UI Setup
 app = QtWidgets.QApplication(sys.argv)
