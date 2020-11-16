@@ -310,6 +310,7 @@ camera.preview_window = (100, 20, width, height)
 # UI Setup
 app = QtWidgets.QApplication(sys.argv)
 window = CamUI()
+sys.os('clear')
 app.exec_()
 
 
