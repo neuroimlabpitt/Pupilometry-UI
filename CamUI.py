@@ -82,7 +82,7 @@ class CamUI(QtWidgets.QMainWindow):
 		## Class Variables
 		###########################################################################################
 		self.collect_raw = False
-		self.wait_for_trigger = True
+		self.wait_for_trigger = False
 		self.acq_num = 1
 		self.trigger_pin = 32
 
