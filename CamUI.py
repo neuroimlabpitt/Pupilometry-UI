@@ -81,6 +81,7 @@ class CamUI(QtWidgets.QMainWindow):
 		self.collect_raw = False
 		self.wait_for_trigger = True
 		self.acq_num = 1
+		self.trigger_pin = 32
 
 
 		self.show()
@@ -266,7 +267,7 @@ class CamUI(QtWidgets.QMainWindow):
 		print("Waiting for Trigger...")
 
 		while True:
-			GPIO.wait_for_edge(args.trigger_pin, GPIO.RISING, timeout=195)
+			GPIO.wait_for_edge(self.trigger_pin, GPIO.RISING, timeout=195)
 			time.sleep(0.002) #debounce 2ms
 			if GPIO.input(32) == 1:
 				print("Button Pressed!!")
@@ -284,7 +285,7 @@ class CamUI(QtWidgets.QMainWindow):
 '''
 	# MAIN
 '''
-'''
+''' DISABLE BRIGHT PI
 try:
 	brightPi = BrightPi()
 	brightPi.reset()
