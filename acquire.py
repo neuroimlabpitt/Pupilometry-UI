@@ -150,10 +150,10 @@ class CamUI(QtWidgets.QMainWindow):
 
 		fname = self.fname_text.text()
 
-		if (fname == './') & (self.wait_for_trigger == False):
+		if fname == './':
 			date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
 			fname = './' + date
-		elif (fname == '') & (self.wait_for_trigger == True):
+		elif fname == '':
 			date = datetime.datetime.now().strftime("%d_%m_%Y_%H_%M_%S")
 			fname = "./" + date
 
@@ -256,7 +256,6 @@ class CamUI(QtWidgets.QMainWindow):
 			GPIO.wait_for_edge(TRIGGER_PIN, GPIO.RISING, timeout=195)
 			time.sleep(0.002) #debounce 2ms
 			if GPIO.input(32) == 1:
-				print("Button Pressed!!")
 				print("Trigger Recived")
 				break
 
@@ -306,7 +305,7 @@ camera.shutter_speed = 60000
 #calculate preview size
 height = int(320 * 0.75)
 width = int(320)
-camera.preview_window = (100, 20, width, height)
+camera.preview_window = (480, 20, width, height)
 
 # UI Setup
 app = QtWidgets.QApplication(sys.argv)
