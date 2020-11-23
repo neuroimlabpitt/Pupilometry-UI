@@ -177,7 +177,7 @@ class CamUI(QtWidgets.QMainWindow):
 
 		# Start recording and tell user
 		if self.collect_raw == True:
-			camera.start_recording(fname, 'yuv', bayer=True)
+			camera.start_recording(fname, 'yuv')
 		else:
 			camera.start_recording(fname)
 		print('Recording started')
