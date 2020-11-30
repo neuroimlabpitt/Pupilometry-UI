@@ -67,20 +67,17 @@ execution_time = time.time() - start_time
 
 print('Time (raw) is: ', execution_time)
 
-
-
+# Capture video
 print("Capturing image...")
 
-start_time2 = time.time()
+start_time = time.time()
 
-camera.capture('image2.jpeg', 'jpeg')
-
-
-execution_time2 = time.time() - start_time2
-
-print('Time is: ', execution_time2)
+camera.start_recording('image.data', 'yuv', bayer=True)
 
 
+execution_time = time.time() - start_time
+
+print('Time (raw) is: ', execution_time)
 
 
 
