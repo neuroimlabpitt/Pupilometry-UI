@@ -14,11 +14,12 @@ start_time = time.time()
 with picamera.PiCamera() as camera:
     with picamera.array.PiBayerArray(camera) as stream:
         camera.capture(stream, 'jpeg', bayer=True)
+        rawimg = stream.array
 
 execution_time = time.time() - start_time
 
 print('Time is: ', execution_time)
-print(stream.size)
+print(rawimg.shape)
 
 '''
 # Capture image
