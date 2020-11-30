@@ -1,0 +1,6 @@
+PyQt5>=5.15.1
+picamera>=1.13
+numpy>=1.19.4
+simplejson>=3.8.1
+tqdm>=4.4.0
+RPi.GPIO>=0.7.0
