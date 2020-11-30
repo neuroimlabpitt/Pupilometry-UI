@@ -59,7 +59,7 @@ print("Capturing image...")
 start_time = time.time()
 
 with picamera.PiCamera() as camera:
-    picamera.PiCamera().camera.capture('image.jpeg', 'jpeg', bayer=True)
+    camera.capture('image.jpeg', 'jpeg', bayer=True)
 
 
 execution_time = time.time() - start_time
@@ -73,7 +73,7 @@ print("Capturing image...")
 start_time = time.time()
 
 with picamera.PiCamera() as camera:
-    picamera.PiCamera().camera.capture('image.jpeg', 'jpeg')
+    camera.capture('image.jpeg', 'jpeg')
 
 
 execution_time = time.time() - start_time
