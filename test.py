@@ -18,7 +18,7 @@ with picamera.PiCamera() as camera:
 execution_time = time.time() - start_time
 
 print('Time is: ', execution_time)
-print(stream.shape)
+print(stream.size)
 
 '''
 # Capture image
