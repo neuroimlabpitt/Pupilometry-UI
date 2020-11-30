@@ -5,6 +5,8 @@ import numpy as np
 import picamera
 import picamera.array
 
+camera = PiCamera()
+
 '''
 # Capture image
 print("Capturing image...")
@@ -58,8 +60,7 @@ print("Capturing image...")
 
 start_time = time.time()
 
-with picamera.PiCamera() as camera:
-    camera.capture('image.jpeg', 'jpeg', bayer=True)
+camera.capture('image.jpeg', 'jpeg', bayer=True)
 
 
 execution_time = time.time() - start_time
@@ -72,8 +73,7 @@ print("Capturing image...")
 
 start_time2 = time.time()
 
-with picamera.PiCamera() as camera:
-    camera.capture('image2.jpeg', 'jpeg')
+camera.capture('image2.jpeg', 'jpeg')
 
 
 execution_time2 = time.time() - start_time2
