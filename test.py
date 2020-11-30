@@ -70,15 +70,15 @@ print('Time (raw) is: ', execution_time)
 
 print("Capturing image...")
 
-start_time = time.time()
+start_time2 = time.time()
 
 with picamera.PiCamera() as camera:
-    camera.capture('image.jpeg', 'jpeg')
+    camera.capture('image2.jpeg', 'jpeg')
 
 
-execution_time = time.time() - start_time
+execution_time2 = time.time() - start_time2
 
-print('Time is: ', execution_time)
+print('Time is: ', execution_time2)
 
 
 
