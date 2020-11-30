@@ -2,7 +2,7 @@ import time
 import os
 import io
 import numpy as np
-import picamera
+from picamera import PiCamera, mmal, mmalobj, exc
 import picamera.array
 
 camera = PiCamera()
