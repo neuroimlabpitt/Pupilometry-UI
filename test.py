@@ -5,7 +5,7 @@ import numpy as np
 import picamera
 import picamera.array
 
-
+'''
 # Capture image
 print("Capturing image...")
 
@@ -20,7 +20,7 @@ execution_time = time.time() - start_time
 
 print('Time is: ', execution_time)
 print(rawimg.shape)
-
+'''
 '''
 # Capture image
 print("Capturing image...")
@@ -53,6 +53,17 @@ execution_time = time.time() - start_time
 print('Time is: ', execution_time)
 '''
 
+# Capture image
+print("Capturing image...")
+
+start_time = time.time()
+
+camera.capture('image.jpeg', 'jpeg', bayer=True)
+
+
+execution_time = time.time() - start_time
+
+print('Time is: ', execution_time)
 
 
 
