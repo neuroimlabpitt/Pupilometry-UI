@@ -67,17 +67,6 @@ execution_time = time.time() - start_time
 
 print('Time (raw) is: ', execution_time)
 
-# Capture video
-print("Capturing image...")
-
-start_time = time.time()
-
-camera.start_recording('image.data', 'yuv', bayer=True)
-
-
-execution_time = time.time() - start_time
-
-print('Time (raw) is: ', execution_time)
 
 
 
