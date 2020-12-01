@@ -159,8 +159,8 @@ class CamUI(QtWidgets.QMainWindow):
 
 		if (fname[-5:] != ".h264") & (self.collect_raw == False):
 			fname = fname + ".h264"
-		elif (fname[-5:] != ".data") & (self.collect_raw == True):
-			fname = fname + ".data"
+		elif (fname[-5:] != ".raw") & (self.collect_raw == True):
+			fname = fname + ".raw"
 
 
 		# Update displayed file name
@@ -177,7 +177,7 @@ class CamUI(QtWidgets.QMainWindow):
 
 		# Start recording and tell user
 		if self.collect_raw == True:
-			camera.start_recording(fname, 'yuv')
+			camera.start_recording(fname, 'rgb')
 		else:
 			camera.start_recording(fname)
 		print('Recording started')
@@ -242,7 +242,7 @@ class CamUI(QtWidgets.QMainWindow):
 		if(fname[-5:] == '.h264'):
 			fname = fname.replace('.h264', '.json')
 		else:
-			fname = fname.replace('.data', '.json')
+			fname = fname.replace('.raw', '.json')
 
 		with open(fname, 'w') as outfile:
 			json.dump(params, outfile)
