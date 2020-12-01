@@ -36,7 +36,7 @@ camera.capture(stream, 'jpeg', bayer=True)
 execution_time = time.time() - start_time
 
 print('Time is: ', execution_time)
-print(stream.length())
+print(stream.getbuffer().nbytes)
 
 
 '''
