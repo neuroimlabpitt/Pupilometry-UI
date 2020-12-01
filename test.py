@@ -58,7 +58,7 @@ print(stream.getbuffer().nbytes)'''
 
 print("Capturing image...")
 
-stream = picamera.PiCameraCircularIO(camera, size=10298864)
+stream = picamera.PiCameraCircularIO(camera, size=10237440)
 
 start_time = time.time()
 
