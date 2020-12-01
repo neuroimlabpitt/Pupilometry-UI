@@ -100,7 +100,7 @@ print('Time (raw) is: ', execution_time)
 stream = picamera.array.PiRGBArray(camera)
 
 camera.start_preview()
-camera.start_recording(fname, 'rgb')
+camera.start_recording(stream, 'rgb')
 
 for remaining in trange(5, 0, -1):
 	camera.wait_recording(1)
