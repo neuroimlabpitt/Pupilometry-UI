@@ -49,11 +49,12 @@ stream = picamera.array.PiBayerArray(camera)
 start_time = time.time()
 
 camera.capture(stream, 'jpeg', bayer=True)
-#rawimg = (stream.demosaic() >> 2).astype(np.uint16)
+rawimg = (stream.demosaic() >> 2).astype(np.uint16)
 
 execution_time = time.time() - start_time
 
 print('Time is: ', execution_time)
+print(rawimg.size)
 
 '''print("Capturing image...")
 
