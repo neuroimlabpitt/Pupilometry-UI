@@ -101,6 +101,8 @@ stream = picamera.array.PiRGBArray(camera)
 camera.start_preview()
 camera.start_recording(stream, 'rgb')
 
+print(stream.getBuffer().nbytes)
+
 print('done')
 
 
