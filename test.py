@@ -6,7 +6,6 @@ from picamera import PiCamera, mmal, mmalobj, exc
 import picamera.array
 
 camera = PiCamera()
-camera.resolution = (64, 64)
 
 '''
 # Capture image
@@ -55,7 +54,7 @@ execution_time = time.time() - start_time
 
 print('Time is: ', execution_time)
 print(stream.getbuffer().nbytes)'''
-
+'''
 print("Capturing image...")
 
 stream = picamera.PiCameraCircularIO(camera, size=10237440)
@@ -68,7 +67,7 @@ camera.capture(stream, 'jpeg', bayer=True)
 execution_time = time.time() - start_time
 
 print('Time (raw) is: ', execution_time)
-
+'''
 
 
 
@@ -97,7 +96,12 @@ print('Time (raw) is: ', execution_time)
 
 
 
+stream = picamera.array.PiRGBArray(camera)
 
+camera.start_preview()
+camera.start_recording(stream, 'rgb')
+
+print('done')
 
 
 
