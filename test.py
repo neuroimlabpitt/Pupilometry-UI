@@ -6,7 +6,7 @@ from picamera import PiCamera, mmal, mmalobj, exc
 import picamera.array
 
 camera = PiCamera()
-camera.resolution = (10, 10)
+camera.resolution = (64, 64)
 
 '''
 # Capture image
