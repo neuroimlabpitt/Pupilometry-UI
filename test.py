@@ -25,7 +25,7 @@ print('Time is: ', execution_time)
 print(rawimg.shape)
 '''
 
-# Capture image
+'''# Capture image
 print("Capturing image...")
 
 stream = io.BytesIO()
@@ -37,25 +37,23 @@ camera.capture(stream, 'jpeg', bayer=True)
 execution_time = time.time() - start_time
 
 print('Time is: ', execution_time)
-print(stream.getbuffer().nbytes)
+print(stream.getbuffer().nbytes)'''
 
 
-'''
+
 # Capture image
 print("Capturing image...")
 
+stream = picamera.array.PiBayerArray(camera)
+
 start_time = time.time()
 
-with picamera.PiCamera() as camera:
-    with picamera.array.PiBayerArray(camera) as stream:
-        camera.capture(stream, 'jpeg', bayer=True)
-        rawimg = (stream.demosaic() >> 2).astype(np.uint16)
+camera.capture(stream, 'jpeg', bayer=True)
+#rawimg = (stream.demosaic() >> 2).astype(np.uint16)
 
 execution_time = time.time() - start_time
 
 print('Time is: ', execution_time)
-'''
-
 
 '''print("Capturing image...")
 
