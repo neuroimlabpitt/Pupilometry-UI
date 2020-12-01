@@ -23,21 +23,21 @@ execution_time = time.time() - start_time
 print('Time is: ', execution_time)
 print(rawimg.shape)
 '''
-'''
+
 # Capture image
 print("Capturing image...")
 
-start_time = time.time()
-
 stream = io.BytesIO()
 
-with picamera.PiCamera() as camera:
-    camera.capture(stream, 'jpeg', bayer=True)
+start_time = time.time()
+
+camera.capture(stream, 'jpeg', bayer=True)
 
 execution_time = time.time() - start_time
 
 print('Time is: ', execution_time)
-'''
+print(stream.size)
+
 
 '''
 # Capture image
@@ -56,7 +56,7 @@ print('Time is: ', execution_time)
 '''
 
 
-print("Capturing image...")
+'''print("Capturing image...")
 
 stream = picamera.PiCameraCircularIO(camera)
 
@@ -68,7 +68,7 @@ camera.capture(stream, 'jpeg', bayer=True)
 execution_time = time.time() - start_time
 
 print('Time (raw) is: ', execution_time)
-
+'''
 
 
 
