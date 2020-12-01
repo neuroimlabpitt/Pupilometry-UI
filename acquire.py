@@ -182,6 +182,9 @@ class CamUI(QtWidgets.QMainWindow):
 			camera.start_recording(fname)
 		print('Recording started')
 
+		# Start preview of camera
+		camera.start_preview()
+
 		# Increase counter
 		self.acq_num += 1
 
@@ -197,6 +200,10 @@ class CamUI(QtWidgets.QMainWindow):
 	def StopRecording(self):
 		"""Stop current recording"""
 		camera.stop_recording()
+
+		# Stop preview of camera
+		camera.stop_preview()
+
 		self.progress_bar.setValue(0)	# Update Progress level
 		print('File saved to ', self.fname_text.text())
 		self.SaveCameraParams()
