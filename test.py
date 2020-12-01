@@ -4,6 +4,7 @@ import io
 import numpy as np
 from picamera import PiCamera, mmal, mmalobj, exc
 import picamera.array
+from tqdm import tqdm, trange
 
 camera = PiCamera()
 
@@ -99,9 +100,12 @@ print('Time (raw) is: ', execution_time)
 stream = picamera.array.PiRGBArray(camera)
 
 camera.start_preview()
-camera.start_recording(stream, 'rgb')
+camera.start_recording(fname, 'rgb')
 
-print(stream.getBuffer().nbytes)
+for remaining in trange(5, 0, -1):
+	camera.wait_recording(1)
+camera.stop_recording()
+
 
 print('done')
 
