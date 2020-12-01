@@ -41,7 +41,7 @@ print(stream.getbuffer().nbytes)'''
 
 
 
-# Capture image
+'''# Capture image
 print("Capturing image...")
 
 stream = picamera.array.PiBayerArray(camera)
@@ -54,11 +54,11 @@ camera.capture(stream, 'jpeg', bayer=True)
 execution_time = time.time() - start_time
 
 print('Time is: ', execution_time)
-print(stream.getbuffer().nbytes)
+print(stream.getbuffer().nbytes)'''
 
-'''print("Capturing image...")
+print("Capturing image...")
 
-stream = picamera.PiCameraCircularIO(camera)
+stream = picamera.PiCameraCircularIO(camera, size=10298864)
 
 start_time = time.time()
 
@@ -68,7 +68,6 @@ camera.capture(stream, 'jpeg', bayer=True)
 execution_time = time.time() - start_time
 
 print('Time (raw) is: ', execution_time)
-'''
 
 
 
