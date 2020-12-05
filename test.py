@@ -2,11 +2,12 @@ import time
 import os
 import io
 import numpy as np
-from import picamera
+import picamera
 import picamera.array
 
-camera = PiCamera()
+camera = picamera.PiCamera()
 camera.framerate = 5
+camera.resolution = (640, 480)
 
 '''
 # Capture image
@@ -118,7 +119,7 @@ FILE = open('tst.raw', 'ab')
 class SaveImg(picamera.array.PiRGBAnalysis):
 	""" Class to save image analysis """
 
-	def analysis(self, a):
+	def analyse(self, a):
 		""" Save the image to a text file (.raw) """
 
 		np.savetxt(FILE, a)
@@ -126,7 +127,9 @@ class SaveImg(picamera.array.PiRGBAnalysis):
 
 
 with SaveImg(camera) as output:
-	camera.start_recording('/dev/null', format="rgb")
+	camera.start_recording('thisfile.raw', format="rgb")
+	time.sleep(5)
+	camera.stop_recording()
 
 
 
