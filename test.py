@@ -2,11 +2,11 @@ import time
 import os
 import io
 import numpy as np
-from picamera import PiCamera, mmal, mmalobj, exc
+from import picamera
 import picamera.array
-from tqdm import tqdm, trange
 
 camera = PiCamera()
+camera.framerate = 5
 
 '''
 # Capture image
@@ -96,8 +96,8 @@ print('Time (raw) is: ', execution_time)
 
 
 
-
-stream = picamera.array.PiRGBArray(camera)
+'''
+stream = picamera.array.PiRGBArray(camera, size=)
 
 camera.start_preview()
 camera.start_recording(stream, 'rgb')
@@ -108,6 +108,27 @@ camera.stop_recording()
 
 
 print('done')
+'''
+
+FILE = open('tst.raw', 'wb')
+FILE.close()
+
+FILE = open('tst.raw', 'ab')
+
+class SaveImg(picamera.array.PiRGBAnalysis):
+	""" Class to save image analysis """
+
+	def analysis(self, a):
+		""" Save the image to a text file (.raw) """
+
+		np.savetxt(FILE, a)
+		print('saved')
+
+
+with SaveImg(camera) as output:
+	camera.start_recording('/dev/null', format="rgb")
+
+
 
 
 
