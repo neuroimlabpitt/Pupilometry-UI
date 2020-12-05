@@ -119,10 +119,10 @@ FILE = open('tst.raw', 'ab')
 class SaveImg(picamera.array.PiRGBAnalysis):
 	""" Class to save image analysis """
 
-	def analyse(self, a):
+	def analyze(self, a):
 		""" Save the image to a text file (.raw) """
 
-		np.savetxt(FILE, a)
+		'''np.savetxt(FILE, a)'''
 		print('saved')
 
 
