@@ -261,7 +261,6 @@ class CamUI(QtWidgets.QMainWindow):
 
 		GPIO.wait_for_edge(TRIGGER_PIN, GPIO.RISING, timeout=60000)
 		print("Trigger Recived (or 1 min has elapsed and no trigger found)")
-		break
 
 	###############################################################################################
 	## To Leave Camera System
