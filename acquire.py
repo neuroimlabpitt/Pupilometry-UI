@@ -259,12 +259,9 @@ class CamUI(QtWidgets.QMainWindow):
 
 		print("Waiting for Trigger...")
 
-		while True:
-			GPIO.wait_for_edge(TRIGGER_PIN, GPIO.RISING, timeout=195)
-			time.sleep(0.002) #debounce 2ms
-			if GPIO.input(32) == 1:
-				print("Trigger Recived")
-				break
+		GPIO.wait_for_edge(TRIGGER_PIN, GPIO.RISING, timeout=195)
+		print("Trigger Recived")
+		break
 
 	###############################################################################################
 	## To Leave Camera System
