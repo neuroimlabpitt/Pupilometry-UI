@@ -261,7 +261,7 @@ class CamUI(QtWidgets.QMainWindow):
 
 		while True:
 			GPIO.wait_for_edge(TRIGGER_PIN, GPIO.RISING, timeout=195)
-			time.sleep(0.002) #debounce 2ms
+			#time.sleep(0.002) #debounce 2ms
 			if GPIO.input(TRIGGER_PIN) == 1:
 				print("Trigger Recived")
 				break
